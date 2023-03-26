@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Manipulation Example</title>
+	<script>
+		function changeTextColorRed() {
+			document.getElementById("myParagraph").style.color = "red";
+		}
+
+		function changeTextColorBlack() {
+			document.getElementById("myParagraph").style.color = "black";
+		}
+
+		function changeButtonInnerHTML() {
+			document.getElementById("myButton").innerHTML = "Mouse Over";
+		}
+
+		function restoreButtonInnerHTML() {
+			document.getElementById("myButton").innerHTML = "Click Me";
+		}
+
+		function assignTextboxValueToParagraph() {
+			var textBoxValue = document.getElementById("myTextbox").value;
+			document.getElementById("myParagraph").innerHTML = textBoxValue;
+		}
+
+		function changeListItemStyle(listItemId) {
+			document.getElementById(listItemId).style.color = "red";
+			document.getElementById(listItemId).style.fontWeight = "bold";
+		}
+
+		function restoreListItemStyle(listItemId) {
+			document.getElementById(listItemId).style.color = "black";
+			document.getElementById(listItemId).style.fontWeight = "normal";
+		}
+	</script>
+</head>
+<body>
+
+	<p id="myParagraph" onmouseover="changeTextColorRed()" onmouseout="changeTextColorBlack()">This is a paragraph.</p>
+
+	<button id="myButton" onmouseover="changeButtonInnerHTML()" onmouseout="restoreButtonInnerHTML()">Click Me</button>
+
+	<input type="text" id="myTextbox" placeholder="Type something here" />
+	<button onclick="assignTextboxValueToParagraph()">Assign Textbox Value to Paragraph</button>
+
+	<ul>
+		<li id="listItem1" onmouseover="changeListItemStyle('listItem1')" onmouseout="restoreListItemStyle('listItem1')">List Item 1</li>
+		<li id="listItem2" onmouseover="changeListItemStyle('listItem2')" onmouseout="restoreListItemStyle('listItem2')">List Item 2</li>
+		<li id="listItem3" onmouseover="changeListItemStyle('listItem3')" onmouseout="restoreListItemStyle('listItem3')">List Item 3</li>
+	</ul>
+
+</body>
+</html>
